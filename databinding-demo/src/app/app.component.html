@@ -1,0 +1,32 @@
+<div class="container">
+  //@Output Example
+  <app-cockpit
+    (serverCreated)="onServerCreated($event)"
+    (bpCreated)="onBluePrintAdded($event)"
+  >
+  </app-cockpit>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">
+        Click to Change
+      </button>
+      <app-server-element
+        *ngFor="let serverElement of serverElements; let i = index"
+        [element]="serverElement"
+        (dblclick)="deleteElement(i)"
+        [name]="serverElement.name"
+      >
+        <p #paragraph>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{
+            serverElement.content
+          }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{
+            serverElement.content
+          }}</em>
+        </p>
+      </app-server-element>
+    </div>
+  </div>
+</div>
+<!-- <app-game (intervalFired)="onIntervalFired($event)"></app-game> -->
