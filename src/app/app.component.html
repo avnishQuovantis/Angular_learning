@@ -1,0 +1,21 @@
+<app-heading></app-heading>
+<div class="container">
+  <div class="row">
+    <div class="appmain">
+      <h1>App component ,Hey {{ name }}</h1>
+
+      <!-- <app-servers></app-servers> -->
+
+      <input type="text" class="form-control" [(ngModel)]="nameValue" />
+      <button
+        class="btn btn-warning"
+        (click)="changeName()"
+        [disabled]="nameValue == ''"
+      >
+        Change Name
+      </button>
+      <!-- <button class="btn btn-danger" (click)="name = ''">Reset</button> -->
+      <app-notes></app-notes>
+    </div>
+  </div>
+</div>

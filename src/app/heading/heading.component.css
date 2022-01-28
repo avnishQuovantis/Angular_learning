@@ -1,0 +1,14 @@
+.heading{
+    width: 100vw;
+    height: 13vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.button-dark{
+    background-color: black;
+    border:2px solid white;
+    color:white;
+    font-size:2rem;
+}

@@ -1,0 +1,27 @@
+<div>
+  <label for="username">username</label>
+  <input
+    type="text"
+    name="username"
+    id="username"
+    class="form-control"
+    [(ngModel)]="username"
+  />
+  <label for="password" [ngStyle]="{ color: textColor }">Password</label>
+  <input
+    type="password"
+    name="password"
+    class="form-control"
+    [(ngModel)]="password"
+  />
+  <button
+    class="btn btn-outline-primary"
+    (click)="checkNamePassword()"
+    [disabled]="checkEmpty()"
+  >
+    SignIn
+  </button>
+  <div *ngIf="displayNotes">
+    <div *ngFor="let data of notes; let i = index">{{ i }} = {{ data }}</div>
+  </div>
+</div>
